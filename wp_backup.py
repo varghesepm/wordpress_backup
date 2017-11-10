@@ -19,10 +19,10 @@ except:
 # Remote sftp server Connection Details.
 ########################################
 
-SFTP_HOST = '172.102.10.20'       
-SFTP_USER = 'testuser'
-SFTP_PASSWD = 'test!@#'
-SFTP_DIR = '/backup/websites/'
+SFTP_HOST = '192.168.1.5'       
+SFTP_USER = 'backupuser'
+SFTP_PASSWD = 'clado123'
+SFTP_DIR = '/home/backupuser/'
 SFTP_PORT = '22'
 
 
@@ -73,7 +73,7 @@ def parsing_wpconfig(install_location):
         
     except AttributeError:
         print('Falied')
-        print('Parsing Error wp-config.php seems to be corrupt,')
+        print('Parsing Error wp-config.php seems to be corrupted,')
         sys.exit(1)
 
         
@@ -184,7 +184,7 @@ def remove_backupdir():
         
 def make_backupdir(location):
     """
-    - remove BACKUP_DIRECTORY which holds sql sump and archive files.
+    - remove BACKUP_DIRECTORY which holds sql dump and archive files.
     """
     if not os.path.exists(location):
         os.makedirs(location)
@@ -197,7 +197,7 @@ def main():
             install_dir = location
             if os.path.exists(install_dir):
                 print('')
-                print('Backup Process of :',install_dir)
+                print('Taking backup of files/db from :',install_dir)
                 make_backupdir(BACKUP_DIRECTORY)
                 database_info = parsing_wpconfig(install_dir)
                 dump_location = take_sqldump(database_info)

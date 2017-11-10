@@ -15,25 +15,22 @@ except:
     print("Install: pip3 install pysftp")
     sys.exit(1)
 
-########################################    
-# Remote sftp server Connection Details.
-########################################
+#--------------------------------------    
+# Remote sftp server details
+#--------------------------------------
 
-SFTP_HOST = '192.168.1.5'       
-SFTP_USER = 'backupuser'
-SFTP_PASSWD = 'clado123'
-SFTP_DIR = '/home/backupuser/'
+SFTP_HOST = '172.102.10.50'       
+SFTP_USER = 'testuser'
+SFTP_PASSWD = 'user!@#'
+SFTP_DIR = '/home/testuser/'
 SFTP_PORT = '22'
 
 
-##############################################################
+#-------------------------------------------------------------
 # Temp location to store local sql.dump and wrodpress archive.
-##############################################################
+#-------------------------------------------------------------
 
-BACKUP_DIRECTORY = '/tmp/wpbackup'
-
-
-
+BACKUP_DIRECTORY = '/tmp/wp_backup'
 
 def parsing_wpconfig(install_location): 
     """

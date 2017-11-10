@@ -19,10 +19,10 @@ except:
 # Remote sftp server Connection Details.
 ########################################
 
-SFTP_HOST = '192.168.1.5'       
-SFTP_USER = 'backupuser'
-SFTP_PASSWD = 'clado123'
-SFTP_DIR = '/home/backupuser/'
+SFTP_HOST = '172.102.10.20'       
+SFTP_USER = 'testuser'
+SFTP_PASSWD = 'test!@#'
+SFTP_DIR = '/backup/websites/'
 SFTP_PORT = '22'
 
 
